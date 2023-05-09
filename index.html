@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="components.js"></script>
+    <title>Web Components</title>
+</head>
+<body>
+    <style>
+        html{
+            background-color: #504a43;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style>
+        section{
+            height: 45rem;
+        }
+    </style>
+    <section>
+    <!--Normale H2 die niet in aanraking komt met de H2 in webcomponent-->
+    <style>
+    h1{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 2.5rem;
+    }
+    </style>
+    <h1>Web Components Projects</h1>
+    <!--H1 die niet gelijk is aan de normale H1 aangezien dit in een shadow DOM is gemaakt dit is geclosed waardoor er niks buiten de shadow DOM in gaat en niks in de shadow DOM naar buiten gaat (style)-->
+    <test-item>Milan Leijser</test-item>
+    <style>
+        .checkbox{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3.5rem;
+        }  
+    </style>
+<div class="checkbox">
+    <checkbox-item checked>checklist
+        <span slot="smalltext">één</span>
+    </checkbox-item>
+    <checkbox-item>checklist
+        <span slot="smalltext">twee</span>
+    </checkbox-item>
+    <checkbox-item>checklist
+        <span slot="smalltext">drie</span>
+    </checkbox-item>
+</div>
+<style>
+    footer{
+        height: 20rem;
+        background-color: rgb(255, 255, 255);
+        margin: -.5rem;
+    }
+</style>
+</section>
+<footer>
+<style>
+    #expandablelist{
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<div id="expandablelist">
+    <ul is="expandable-list" data-expanded>
+        <li>uitvouwbare lijst een</li>
+        <li>uitvouwbare lijst twee</li>
+        <ul is="expandable-list" data-expanded>
+            <li>uitvouwbare lijst drie</li>
+            <li>uitvouwbare lijst vier</li>
+            <ul is="expandable-list" data-expanded>
+                <li>uitvouwbare lijst vijf</li>
+                <li>uitvouwbare lijst zes</li>
+                <ul is="expandable-list" data-expanded>
+                    <li>uitvouwbare lijst zeven</li>
+                    <li>uitvouwbare lijst acht</li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+</div>
+</footer>
+
+</body>
+</html>
